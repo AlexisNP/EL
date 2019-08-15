@@ -21,30 +21,37 @@
 
 <div class="landing">
   <header>
+    <div>
+      <a href="#"><img src="img/EL-logo.png" class="logo" alt="éditions législatives logo"></a>
+    </div>
     <nav>
-      <div class="logo">
-        <img src="#" alt="éditions législatives logo">
-      </div>
       <div class="phone">
         <address><a href="tel:0189786312">01 89 78 63 12</a></address>
-        <div class="free-tooltip">Gratuit</div>
+        <b class="free-tooltip">Gratuit</b>
       </div>
       <div class="my-cart">
-        <img src="img\icons\cart.svg" alt="icône panier">
-        <span class="cart-itemscounter">2</span>
+        <a href="#">
+          <svg style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;" viewBox="0 0 382 467.5" x="0px" y="0px" fill-rule="evenodd" clip-rule="evenodd">
+            <g>
+              <path class="fil0" d="M11 0l59 14c4,0 6,3 7,6l9 44 289 27c5,1 9,6 7,11l-45 138c-1,4 -4,6 -8,6l-205 0 4 21 198 0c11,0 11,20 0,20l-207 0c-4,0 -8,-2 -9,-7l-51 -248 -52 -12c-12,-3 -7,-22 4,-20zm79 84l29 142 202 0 38 -116 -269 -26z"/>
+              <path class="fil0" d="M163 296c21,0 39,18 39,39 0,22 -18,39 -39,39 -21,0 -39,-17 -39,-39 0,-21 18,-39 39,-39zm0 20c-10,0 -19,9 -19,19 0,11 8,19 19,19 10,0 19,-8 19,-19 0,-10 -9,-19 -19,-19z"/>
+              <path class="fil0" d="M284 296c21,0 39,18 39,39 0,22 -18,39 -39,39 -21,0 -39,-17 -39,-39 0,-21 18,-39 39,-39zm0 20c-10,0 -19,9 -19,19 0,11 9,19 19,19 10,0 19,-8 19,-19 0,-10 -9,-19 -19,-19z"/>
+            </g>
+          </svg>
+          <div class="cart-itemcounter">2</div>
+        </a>
       </div>
-      <button type="button">Connexion</button>
-      <button type="button">Menu</button>
+      <button type="button" class="login-btn">Connexion</button>
+      <button type="button" class="menu-btn">Menu</button>
     </nav>
   </header>
-  <div>
+  <div class="news-container">
     <article>
-      <a href="#">
-        <h1>L'actualité juridique, convention collective à l'unité, droit social...</h1>
-        <p>Nous avons des produits et services analysés mis à jour en permanence. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis et orci sit amet consequat.</p>
-      </a>
+      <a href="#"><h1>L'actualité juridique, convention collective à l'unité, droit social...</h1></a>
+      <p>Nous avons des produits et services analysés mis à jour en permanence. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis et orci sit amet consequat.</p>
     </article>
     <form action="#">
+      <label for="q">Une recherche ?</label>
       <input name="q" type="text" placeholder="Ex: Fiche de paie, loi Macron...">
       <select name="domain">
         <option value="" disabled selected>Votre domaine</option>
@@ -56,31 +63,34 @@
         <option value="">Ressources humaines</option>
         <option value="">Ressources humaines</option>
       </select>
-      <button type="submit">Rechercher</button>
-      <button type="reset">Effacer</button>
+      <div>
+        <button type="submit">Rechercher</button>
+      </div>
     </form>
   </div>
 </div>
 
 <div class="ourproducts">
   <header>
-    <div>Nos produits pour :</div>
-    <button type="button" class="product-tag rh">Ressources humaines</button>
-    <button type="button" class="product-tag compta">Comptabilité</button>
-    <button type="button" class="product-tag droit">Droit</button>
-    <button type="button" class="product-tag hse">HSE</button>
-    <button type="button" class="product-tag irp">IRP</button>
-    <button type="button" class="product-tag acl">Administrations & collectivités locales</button>
-    <button type="button" class="product-tag autres">Autres...</button>
+    <label>Nos produits pour :</label>
+    <div class="btn-group">
+      <button type="button" class="product-tag rh active">Ressources humaines</button>
+      <button type="button" class="product-tag compta">Comptabilité</button>
+      <button type="button" class="product-tag droit">Droit</button>
+      <button type="button" class="product-tag hse">HSE</button>
+      <button type="button" class="product-tag irp">IRP</button>
+      <button type="button" class="product-tag acl">Administrations & collectivités locales</button>
+      <button type="button" class="product-tag autres">Autres...</button>
+    </div>
   </header>
   <ul class="product-list">
 
     <li class="product-item">
-      <div>Solution métier</div>
-      <div>
+      <div class="title">Solution métier</div>
+      <div class="product-card">
         <header>
-          <img src="#" alt="#">
-          <b>802,00 € <sup>HT</sup></b>
+          <img src="./img/products/solution_rh_paie.png" alt="#">
+          <b class="price">802,00 € <sup>HT</sup></b>
         </header>
         <h3>SOLUTIONS RH PAIE</h3>
         <p>Le dispositif infaillible pour gérer la paie.</p>
@@ -90,25 +100,27 @@
       </div>
     </li>
     <li class="product-item">
-      <div>Ouvrage pratique</div>
-      <div>
+      <div class="title">Ouvrage pratique</div>
+      <div class="product-card">
         <header>
-          <img src="#" alt="#">
-          <b>60,00 € <sup>TTC</sup></b>
+          <img src="./img/products/ordonnances-manu.png" alt="#">
+          <b class="price">60,00 € <sup>TTC</sup></b>
         </header>
         <h3>ORDONNANCE MACRON</h3>
         <p>La réforme du code du travail : Ce qui change !</p>
         <footer>
-          <a href="#"><img src="img\icons\cart.svg" alt="icône panier"> Ajouter au panier</a>
+          <a href="#">
+            <span>Ajouter au panier</span>
+          </a>
         </footer>
       </div>
     </li>
     <li class="product-item">
-      <div>Ressource gratuite</div>
-      <div>
+      <div class="title">Ressource gratuite</div>
+      <div class="product-card">
         <header>
-          <img src="#" alt="#">
-          <b>GRATUIT</b>
+          <img src="./img/products/brp-gerer-la-mobilite-en-entreprise.png" alt="#">
+          <b class="price">GRATUIT</b>
         </header>
         <h3>SOLUTIONS RH PAIE</h3>
         <p>Une nouvelle articulation accords de branche/accords d’entreprise</p>
@@ -124,7 +136,7 @@
 </div>
 
 <div class="extra-infos">
-  <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+  <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
   <ul>
     <li>
       <img src="img\icons\doublearrow.svg" alt="">
@@ -150,14 +162,14 @@
     <p>Découvrez gratuitement tous nos produits</p>
     <p><b>SANS ENGAGEMENTS ET EN ACCES ILLIMITÉ PENDANT 15 JOURS.</b></p>
   </header>
-  <ul class="freetrials-list">
+  <ul class="product-list">
 
-      <li class="freetrial-item">
-        <div>Dossier spécial</div>
-        <div>
+      <li class="product-item">
+        <div class="title">Dossier spécial</div>
+        <div class="product-card">
           <header>
-            <img src="#" alt="#">
-            <b>GRATUIT</b>
+            <img src="./img/products/brp-gerer-la-mobilite-en-entreprise.png" alt="#">
+            <b class="price">GRATUIT</b>
           </header>
           <h3>ORDONNANCE MACRON</h3>
           <p>Une nouvelle articulation accords de branche/accords d’entreprise</p>
@@ -166,12 +178,12 @@
           </footer>
         </div>
       </li>
-      <li class="freetrial-item">
-        <div>Top téléchargement</div>
-        <div>
+      <li class="product-item">
+        <div class="title">Top téléchargement</div>
+        <div class="product-card">
           <header>
-            <img src="#" alt="#">
-            <b>GRATUIT</b>
+              <img src="./img/products/baux_commerciaux.png" alt="#">
+            <b class="price">GRATUIT</b>
           </header>
           <h3>BAIL COMMERCIAL</h3>
           <p>Une nouvelle articulation accords de branche/accords d’entreprise</p>
@@ -180,9 +192,9 @@
           </footer>
         </div>
       </li>
-      <li class="freetrial-item">
-        <div>Article à la une</div>
-        <div>
+      <li class="product-item">
+        <div class="title">Article à la une</div>
+        <div class="product-card">
           <h3>"L'ACCORD SUR LA FORMATION PROFESSIONNELLE MANQUE D’AMBITION"</h3>
           <p>Marc Dennery, co-fondateur et co-dirigeant de C-Campus, regrette que le projet d'accord soumis à signature ne modifie pas en profondeur le système de la formation professionnelle. Loin des annonces de l'été 2017. Interview...</p>
           <footer>
@@ -192,7 +204,7 @@
       </li>
     </ul>
     <footer>
-      <a href="#">Tous nos produits pour <b>gratuitement</b></a>
+      <a href="#">Toutes nos ressources à consulter <b>gratuitement</b></a>
     </footer>
   </div>  
 </div>
@@ -200,15 +212,15 @@
 <div class="newsletter">
   <p>Suivez toute notre actualité en vous inscrivant à notre newsletter</p>
   <form action="#">
-    <input type="text" placeholder="Votre adresse mail">
+    <input type="email" placeholder="Votre adresse mail">
     <button type="submit">S'inscrire</button>
   </form>
 </div>
 
 <footer>
   <div class="contact-info">
-    <div class="logo">
-      <img src="#" alt="éditions législatives logo">
+    <div>
+      <a href="#"><img src="img/EL-logo-dark.png" class="logo" alt="éditions législatives logo"></a>
     </div>
     <div class="phone">
       <p>Appelez-nous !</p>
