@@ -143,12 +143,10 @@ sup {
   border-radius: 25px;
   border: none;
   cursor: pointer;
-  transition: color 0.2s cubic-bezier(0.77, 0, 0.175, 1), background 0.2s cubic-bezier(0.77, 0, 0.175, 1);
 }
   .landing nav .login-btn:hover {
     color: #FFF;
     background: #111;
-    transition: color 0.2s cubic-bezier(0.77, 0, 0.175, 1), background 0.2s cubic-bezier(0.77, 0, 0.175, 1);
   }
 
 /* == MENU FORMATTING == */
@@ -174,7 +172,6 @@ sup {
   color: #FFF;
   background: #000;
 }
-
 /* Transformation effects */
 .landing nav .menu:not(.active) .menu-item a{
   transform: scale(0);
@@ -207,8 +204,6 @@ sup {
   background: #000;
   border-radius: 50%;
 }
-
-
 /* Colour formatting */
 .landing nav .menu.active .menu-body .menu-item:nth-child(1) a:hover {background: #00a0a3}
 .landing nav .menu.active .menu-body .menu-item:nth-child(2) a:hover {background: #9b1f82}
@@ -221,7 +216,9 @@ sup {
   display: flex;
   background: rgba(255, 255, 255, 0.95);
   border-bottom-left-radius: 25px;
-  box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.2)
+  -webkit-box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* News section */
@@ -282,8 +279,15 @@ sup {
   padding: 10px 14px;
   color: #555;
   background: #FFF;
-  border: solid 1px rgba(0, 0, 0, 0.1);
+  border: solid 1px rgba(0, 0, 0, 0.2);
   border-radius: 16px;
+}
+.landing .news-container form input:focus,
+.landing .news-container form select:focus {
+  -moz-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  border: solid 1px rgba(0, 0, 0, 0.3);
 }
 .landing .news-container form .select-wrapper {
   position: relative;
@@ -303,9 +307,6 @@ sup {
   color: #555;
   z-index: 100;
 }
-.landing .news-container form select[disabled] {
-  color: red !important;
-}
 .landing .news-container form select svg {
   position: absolute;
 }
@@ -319,6 +320,9 @@ sup {
   border: none;
   border-radius: 16px;
   cursor: pointer;
+}
+.landing .news-container form button:hover {
+  background: #0073be;
 }
 
 /* =========== OUR PRODUCTS SECTION =========== */
@@ -520,14 +524,14 @@ sup {
   font-size: 0.75em;
   font-weight: 600;
   color: #FFF;
-  background: #00a0a3;
+  background: #ed0959;
   border: none;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   cursor: pointer;
 }
 .newsletter form button:hover {
-  background: #32a44d;
+  background: #0073be;
 }
 
 /* =========== FOOTER SECTION =========== */
@@ -569,10 +573,23 @@ footer .contact-info .social-links a {
   border-radius: 25px;
   line-height: 30px;
 }
-  footer .contact-info .social-links a:hover svg.fa-facebook-f {color: #3b5998}
-  footer .contact-info .social-links a:hover svg.fa-twitter {color: #38A1F3}
-  footer .contact-info .social-links a:hover svg.fa-linkedin-in {color: #0077B5}
-  footer .contact-info .social-links a:hover svg.fa-youtube {color: #c4302b}
+  /* Hover logo colours */
+  footer .contact-info .social-links li:nth-child(1) a:hover {
+    color: #FFF;
+    background: #3b5998;
+  }
+  footer .contact-info .social-links li:nth-child(2) a:hover {
+    color: #FFF;
+    background: #38A1F3;
+  }
+  footer .contact-info .social-links li:nth-child(3) a:hover {
+    color: #FFF;
+    background: #0077B5;
+  }
+  footer .contact-info .social-links li:nth-child(4) a:hover {
+    color: #FFF;
+    background: #c4302b;
+  }
 
 /* Bottom Footer - Sitemap */
 footer .sitemap {
