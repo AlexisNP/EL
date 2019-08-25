@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
   <!-- Meta -->
     <title>Éditions Législatives</title>
@@ -16,10 +16,6 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i&display=swap" rel="stylesheet">
   <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <script src="https://kit.fontawesome.com/fc86bb0b54.js"></script>
-  <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="./js/app.js"></script>
 </head>
 <body>
 
@@ -35,32 +31,33 @@
     <nav>
       <div class="my-cart">
         <a href="#">
-          <i class="fas fa-shopping-cart fa-2x"></i>
+          <span class="icon-cart"></span>
           <div class="cart-itemcounter">2</div>
         </a>
       </div>
       <button type="button" class="login-btn">Connexion</button>
       <div class="menu">
-        <button type="button" class="menu-btn">Menu</button>
+        <input type="checkbox" hidden id="show-menu" />
+        <label class="menu-btn" for="show-menu">Menu</label>
         <ul class="menu-body">
           <li class="menu-item">
             <a href="#" title="Accueil">
-              <i class="fas fa-home"></i>
+              <span class="icon-home"></span>
             </a>
         </li>
           <li class="menu-item">
             <a href="#" title="Boutique">
-              <i class="fas fa-shopping-bag"></i>
+              <span class="icon-credit-card"></span>
             </a>
         </li>
           <li class="menu-item">
             <a href="#" title="Mon profil">
-              <i class="fas fa-user"></i>
+              <span class="icon-user"></span>
             </a>
         </li>
           <li class="menu-item">
             <a href="#" title="Nous contacter">
-              <i class="fas fa-paper-plane"></i>
+              <span class="icon-envelop"></span>
             </a>
         </li>
         </ul>
@@ -74,10 +71,10 @@
     </article>
     <form action="#">
       <label for="q">Une recherche ?</label>
-      <input name="q" type="text" placeholder="Ex: Fiche de paie, loi Macron...">
+      <input id="q" name="q" type="text" placeholder="Ex: Fiche de paie, loi Macron...">
       <div class="select-wrapper">
-        <i class="fas fa-sort-down"></i>
-        <select name="domain" aria-placeholder="Votre Domaine">
+        <span class="icon-circle-down"></span>
+        <select name="domain">
           <option value="void" disabled selected>Votre domaine</option>
           <option value="rh">Ressources humaines</option>
           <option value="staffrep">Représentant du personnel</option>
@@ -135,7 +132,7 @@
         <p>La réforme du code du travail : Ce qui change !</p>
         <footer>
           <a href="#">
-            <span><i class="fas fa-shopping-cart"></i> Ajouter au panier</span>
+            <span><span class="icon-cart"></span> Ajouter au panier</span>
           </a>
         </footer>
       </div>
@@ -164,19 +161,19 @@
   <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
   <ul>
     <li>
-      <img src="img\icons\doublearrow.svg" alt="satisfait ou remboursé icone">
+      <span class="icon-loop2"></span>
       <p>Satisfait ou remboursé pendant 2 semaines</p>
     </li>
     <li>
-      <img src="img\icons\medal.svg" alt="qualité et mise à jour icone">
+      <span class="icon-trophy"></span>
       <p>Qualité et mise à jour assurées par nos experts</p>
     </li>
     <li>
-      <img src="img\icons\speechbubble.svg" alt="réponse gratuite icone">
+      <span class="icon-bubbles"></span>
       <p>Réponse gratuite à toutes vos questions sur l’utilisation de nos produits</p>
     </li>
     <li>
-      <img src="img\icons\lock.svg" alt="sécurité de paiement icone">
+      <span class="icon-lock"></span>
       <p>Règlement par chèque, virement, ou CB sécurisé en ligne</p>
     </li>
   </ul>
@@ -227,10 +224,9 @@
       </div>
     </li>
   </ul>
-    <footer>
-      <a href="#">Toutes nos ressources à consulter <b>gratuitement</b></a>
-    </footer>
-  </div>
+  <footer>
+    <a href="#">Toutes nos ressources à consulter <b>gratuitement</b></a>
+  </footer>
 </div>
 
 <div class="newsletter">
@@ -251,10 +247,10 @@
       <address><a href="tel:0189786312">01 89 78 63 12</a></address>
     </div>
     <ul class="social-links">
-      <li><a href="facebook.com"><i class="fab fa-facebook-f"></i></a></li>
-      <li><a href="twitter.com"><i class="fab fa-twitter"></i></a></li>
-      <li><a href="linkedin.com"><i class="fab fa-linkedin-in"></i></a></li>
-      <li><a href="youtube.com"><i class="fab fa-youtube"></i></a></li>
+      <li><a href="facebook.com"><span class="icon-facebook"></span></a></li>
+      <li><a href="twitter.com"><span class="icon-twitter"></span></a></li>
+      <li><a href="linkedin.com"><span class="icon-linkedin2"></span></a></li>
+      <li><a href="youtube.com"><span class="icon-youtube"></span></a></li>
     </ul>
   </div>
   <div class="sitemap">
