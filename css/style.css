@@ -116,8 +116,8 @@ sup {
 .landing nav .my-cart a{
   position: relative;
 }
-.landing nav .my-cart svg{
-  width: 25px;
+.landing nav .my-cart span{
+  font-size: 1.35em;
   vertical-align: middle;
 }
 .landing nav .my-cart .cart-itemcounter {
@@ -151,6 +151,7 @@ sup {
 
 /* == MENU FORMATTING == */
 /* Menu button */
+/* update by Juan */
 .landing nav .menu {
   position: relative;
   color: #FFF;
@@ -167,25 +168,32 @@ sup {
   border-radius: 50%;
   cursor: pointer;
 }
-.landing nav .menu.active .menu-btn,
+#show-menu:checked ~ .menu-btn,
 .landing nav .menu .menu-btn:hover {
   color: #FFF;
   background: #000;
 }
 /* Transformation effects */
-.landing nav .menu:not(.active) .menu-item a{
+/* style depends on show menu being checked rather than active, this replaces js */
+#show-menu ~ .menu-body .menu-item a
+{
   transform: scale(0);
   transform-origin: 20px 20px;
-  transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
 }
-.landing nav .menu.active .menu-item a{
-  transform: scale(100%);
+#show-menu:checked ~ .menu-body
+{
+  display: flex;
+}
+#show-menu:checked ~ .menu-body .menu-item a
+{
+  transform: scale(1);
   transform-origin: 20px 20px;
   transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
 }
-.landing nav .menu.active .menu-item:nth-child(1) a {transition-delay: 0.3s}
-.landing nav .menu.active .menu-item:nth-child(2) a {transition-delay: 0.2s}
-.landing nav .menu.active .menu-item:nth-child(3) a {transition-delay: 0.1s}
+
+#show-menu:checked ~ .menu-body .menu-item:nth-child(1) a {transition-delay: 0.3s}
+#show-menu:checked ~ .menu-body .menu-item:nth-child(2) a {transition-delay: 0.2s}
+#show-menu:checked ~ .menu-body .menu-item:nth-child(3) a {transition-delay: 0.1s}
 
 .landing nav .menu .menu-body {
   position: absolute;
@@ -204,11 +212,21 @@ sup {
   background: #000;
   border-radius: 50%;
 }
-/* Colour formatting */
-.landing nav .menu.active .menu-body .menu-item:nth-child(1) a:hover {background: #00a0a3}
-.landing nav .menu.active .menu-body .menu-item:nth-child(2) a:hover {background: #9b1f82}
-.landing nav .menu.active .menu-body .menu-item:nth-child(3) a:hover {background: #ed0959}
-.landing nav .menu.active .menu-body .menu-item:nth-child(4) a:hover {background: #0073be}
+/* Colour formatting no need to depend on active */
+.landing nav .menu .menu-body .menu-item:nth-child(1) a:hover {background: #00a0a3}
+.landing nav .menu .menu-body .menu-item:nth-child(2) a:hover {background: #9b1f82}
+.landing nav .menu .menu-body .menu-item:nth-child(3) a:hover {background: #ed0959}
+.landing nav .menu .menu-body .menu-item:nth-child(4) a:hover {background: #0073be}
+
+/* extra css so label behaves like a button */
+label.menu-btn
+{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 50px;
+  text-align: center;
+}
+
 
 /* MAIN SECTION (NEWS + FORM) */
 .landing .news-container {
@@ -299,16 +317,14 @@ sup {
   appearance: none;
   cursor: pointer;
 }
-.landing .news-container form .select-wrapper svg {
+.landing .news-container form .select-wrapper span {
   position: absolute;
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
-  color: #555;
-  z-index: 100;
-}
-.landing .news-container form select svg {
-  position: absolute;
+  color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  pointer-events: none;
 }
 .landing .news-container form button {
   width: 100%;
@@ -443,10 +459,11 @@ sup {
 .extra-infos li:not(:last-child) {
   border-right: solid 1px #E0E0E0;
 }
-.extra-infos li img {
-  max-width: 50px;
-  max-height: 50px;
-  margin-bottom: .5rem;
+.extra-infos li span {
+  font-size: 3.5em;
+}
+.extra-infos li p {
+  margin-top: 1.5rem;
 }
 
 /* =========== FREE TRIALS SECTION =========== */
@@ -716,6 +733,80 @@ footer .sitemap a:hover {
   background: #111;
 }
 
+/* =========== FONTS =========== */
+/* icomoon icons */
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?nab70s');
+  src:  url('fonts/icomoon.eot?nab70s#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?nab70s') format('truetype'),
+    url('fonts/icomoon.woff?nab70s') format('woff'),
+    url('fonts/icomoon.svg?nab70s#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home:before {
+  content: "\e900";
+}
+.icon-cart:before {
+  content: "\e93a";
+}
+.icon-credit-card:before {
+  content: "\e93f";
+}
+.icon-envelop:before {
+  content: "\e945";
+}
+.icon-bubbles:before {
+  content: "\e96c";
+}
+.icon-user:before {
+  content: "\e971";
+}
+.icon-lock:before {
+  content: "\e98f";
+}
+.icon-trophy:before {
+  content: "\e99e";
+}
+.icon-loop2:before {
+  content: "\ea2e";
+}
+.icon-circle-down:before {
+  content: "\ea43";
+}
+.icon-facebook:before {
+  content: "\ea90";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-youtube:before {
+  content: "\ea9d";
+}
+.icon-linkedin2:before {
+  content: "\eaca";
+}
+
+
+
+
 /* =========== MEDIA QUERIES =========== */
 
 /* LAPTOPS */
@@ -778,6 +869,9 @@ and (max-width : 1060px) {
   }
   .product-list {
     justify-content: space-around;
+  }
+  .extra-infos li {
+    padding: 0.5rem;
   }
 }
 
